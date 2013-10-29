@@ -7,4 +7,13 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
+  def questions_answers
+  end
+
+  def partners
+  end
+
+  def student_story
+  end
 end
