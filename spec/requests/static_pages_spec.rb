@@ -11,7 +11,7 @@ describe "Static pages" do
 
   describe "Home page" do
     before { visit root_path }
-    let(:heading) { 'Vanilla Rails App' }
+    let(:heading) { 'Antwerp Student Hotel' }
     let(:page_title) { '' }
 
     it_should_behave_like "all static pages"
@@ -53,7 +53,7 @@ describe "Static pages" do
     click_link "Home"
     click_link "Sign up now!"
     expect(page).to have_title(full_title('Sign up'))
-    click_link "Vanilla App"
+    click_link "ASH"
     expect(page).to have_title(full_title(''))
   end
 
