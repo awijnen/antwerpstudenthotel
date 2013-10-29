@@ -18,14 +18,6 @@ describe "Static pages" do
     it { should_not have_title('| Home') }
   end
 
-  describe "Help page" do
-    before { visit help_path }
-    let(:heading) { 'Help' }
-    let(:page_title) { 'Help' }
-      
-    it_should_behave_like "all static pages"
-  end
-
   describe "About page" do
     before { visit about_path }
     let(:heading) { 'About' }
@@ -46,8 +38,6 @@ describe "Static pages" do
     visit root_path
     click_link "About"
     expect(page).to have_title(full_title('About Us'))
-    click_link "Help"
-    expect(page).to have_title(full_title('Help'))
     click_link "Contact"
     expect(page).to have_title(full_title('Contact'))
     click_link "Home"
