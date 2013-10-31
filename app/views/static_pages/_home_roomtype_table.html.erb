@@ -1,0 +1,29 @@
+<div class="table-responsive">
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th>Room Type</th>
+        <th>Short Term</th>
+        <th>Long Term</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><a href="http://www.booking.com">Book now</a></td>
+        <td><%= link_to "Book now", {:controller => "reservations", :action => "new", :room_type => 1 } %></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><a href="http://www.booking.com">Book now</a></td>
+        <td><%= link_to "Book now", {:controller => "reservations", :action => "new", :room_type => 2 } %></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><a href="http://www.booking.com">Book now</a></td>
+        <td><%= link_to "Book now", {:controller => "reservations", :action => "new", :room_type => 3 } %></td>
+      </tr>
+    </tbody>
+    
+  </table>
+</div>
