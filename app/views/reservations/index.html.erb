@@ -10,7 +10,8 @@
         <th>Start Date</th>
         <th>End Date</th>
         <th>Email</th>
-        <th>Approved</th>
+        <th>Reservation Approved</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,12 @@
           <td><%= reservation.end_date %></td>
           <td><%= reservation.email %></td>
           <td><%= reservation.approved %></td>
+          <td>  
+            <% unless reservation.approved? %>
+               <%= link_to "Approve", approval_toggle_path(id: reservation.id) %> | 
+            <% end %> 
+            <%= link_to "Delete", reservation, method: :delete, data: { confirm: "You sure?" } %>
+          </td>
         </tr>
       <% end %>
       

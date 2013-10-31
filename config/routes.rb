@@ -12,6 +12,7 @@ SampleApp::Application.routes.draw do
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/student_story', to: 'static_pages#student_story', via: 'get'
   match '/admin_toggle', to: 'users#admin_toggle', via: 'get', as: :admin_toggle
+  match '/approval_toggle', to: 'reservations#approval_toggle', via: 'get', as: :approval_toggle
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

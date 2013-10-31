@@ -25,12 +25,20 @@ before_action :admin_user, only: [:index, :destroy, :toggle_approval]
   end
 
   def destroy
+    @reservation = Reservation.find(params[:id])
+    if @reservation.delete
+      flash[:success] = "Reservation deleted"
+    else
+      flash[:error] = "Reservation couldn't be deleted"
+    end
+    redirect_to reservations_path
   end
 
-  def toggle_approval
+  def approval_toggle
     @reservation = Reservation.find(params[:id])
-    @reservation.toggle(:approve)
+    @reservation.toggle(:approved)
     if @reservation.save
+      ReservationMailer.user_reservation_approved(@reservation).deliver
       redirect_to reservations_path
     else
       flash[:error] = "Can not approve"
