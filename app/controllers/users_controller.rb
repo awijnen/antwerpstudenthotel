@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :signed_in_user, only: [:index, :edit, :update, :destroy]
+  before_action :signed_in_user, only: [:index, :edit, :update, :destroy, :admin_toggle]
   before_action :correct_user, only: [:edit, :update]
-  before_action :admin_user, only: [:destroy]
+  before_action :admin_user, only: [:destroy, :admin_toggle]
   before_action :signed_in_illegal_action_redirect, only: [:new, :create]
 
   def index
@@ -38,6 +38,21 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       render 'edit'
+    end
+  end
+
+  def admin_toggle
+    @user = User.find(params[:id])
+    if @user != current_user
+      if @user.admin?
+        @user.update_attribute(:admin, false)
+      else
+        @user.update_attribute(:admin, true)
+      end
+      flash[:success] = "Admin status toggled."
+      redirect_to users_url
+    else
+      redirect_to root_url
     end
   end
 
