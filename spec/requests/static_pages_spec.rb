@@ -41,9 +41,6 @@ describe "Static pages" do
     first(:link, "Contact").click
     expect(page).to have_title(full_title('Contact'))
     click_link "ASH"
-    click_link "Sign up now!"
-    expect(page).to have_title(full_title('Sign up'))
-    click_link "ASH"
     expect(page).to have_title(full_title(''))
   end
 
