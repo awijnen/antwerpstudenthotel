@@ -1,3 +1,27 @@
 <div class="container text_pane contact_pane">
-  <h1>CONTACT</h1>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <h1>CONTACT</h1>    
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-5">
+      <%= image_tag "ash_logo.png" %>
+      <div id="contact_pane_text">
+        <h2>ADDRESS:</h2>
+          <p>Frankrijklei 43</p>
+          <p>2000 Antwerp,</p>
+          <p>Belgium</p>
+          <br>
+          <p>Phone: <span class="phone_number">+32(0)472-608-974</span></p>
+        </div>
+    </div>
+
+    <div class="col-md-5 col-md-offset-2">
+      <%= render :template => 'contact_requests/new' %>
+    </div>
+  </div>
+  
 </div>

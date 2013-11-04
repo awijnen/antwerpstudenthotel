@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
     @answers = Answer.all
+    @contact_request = ContactRequest.new
   end
 
   def about

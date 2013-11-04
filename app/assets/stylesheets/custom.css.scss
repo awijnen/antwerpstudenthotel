@@ -289,6 +289,17 @@ input {
 
 #home_contact_pane {
   background-color: $ashGrey;
+  img {
+    margin-top: 20px;
+  }
+  
+  span {
+    letter-spacing: 2px;
+  }
+
+  #contact_pane_text {
+    margin-top: 80px;
+  }
 }
 
 #home_title_pane {

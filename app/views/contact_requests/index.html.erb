@@ -1,0 +1,39 @@
+<% provide(:title, "All Contact Requests") %>
+
+<div class="container admin_page">
+  <h1>All Contact Requests</h1>
+
+  <div class="table-responsive">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Contact Request id</th>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Country</th>
+          <th>Comment</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @contact_requests.each do |contact_request| %>
+          <tr>
+            <td><%= contact_request.id %></td>
+            <td><%= contact_request.name %></td>
+            <td><%= contact_request.surname %></td>
+            <td><%= contact_request.email %></td>
+            <td><%= contact_request.phone %></td>
+            <td><%= contact_request.country %></td>
+            <td><%= contact_request.comment %></td>
+            <td>   
+              <%= link_to "Delete", contact_request, method: :delete, data: { confirm: "You sure?" } %>
+            </td>
+          </tr>
+        <% end %>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
