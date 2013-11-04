@@ -17,26 +17,8 @@ describe "Static pages" do
     it { should_not have_title('| Home') }
   end
 
-  describe "About page" do
-    before { visit about_path }
-    let(:heading) { 'About' }
-    let(:page_title) { 'About' }
-      
-    it_should_behave_like "all static pages"
-  end
-
-  describe "Contact page" do
-    before { visit contact_path }
-    let(:heading) { 'Contact' }
-    let(:page_title) { 'Contact' }
-      
-    it_should_behave_like "all static pages"
-  end
-
   it "should have the right links on the layout" do
     visit root_path
-    click_link "CONTACT"
-    expect(page).to have_title(full_title('Contact'))
     click_link "ASH"
     expect(page).to have_title(full_title(''))
   end

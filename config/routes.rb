@@ -1,5 +1,6 @@
 SampleApp::Application.routes.draw do
   resources :reservations
+  resources :answers, only: [:new, :create, :destroy, :index]
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root 'static_pages#home'

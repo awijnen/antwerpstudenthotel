@@ -1,0 +1,19 @@
+<% provide(:title, 'New Question & Answer') %>
+
+<div class="container admin_page">
+  <h1>New Question & Answer</h1>
+
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <%= form_for(@answer) do |f| %>
+
+        <%= f.label :question %>
+        <%= f.text_area :question %>
+
+        <%= f.label :answer %>
+        <%= f.text_area :answer %>                                          
+        <%= f.submit "Submit Question & Answer", class: "btn btn-large btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

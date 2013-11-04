@@ -6,8 +6,8 @@
   </div>
 
   <div class="row">
-    <% 10.times do %>
-      <%= render 'static_pages/question_answer' %>
+    <% @answers.each do |answer| %>
+      <%= render 'static_pages/question_answer', answer: answer %>
     <% end %>
   </div>
 

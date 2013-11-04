@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @answers = Answer.all
   end
 
   def about
