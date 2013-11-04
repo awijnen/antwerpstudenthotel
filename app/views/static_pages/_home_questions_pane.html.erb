@@ -1,0 +1,24 @@
+<div class="container text_pane questions_pane">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>QUESTIONS & ANSWERS</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <% 10.times do %>
+      <%= render 'static_pages/question_answer' %>
+    <% end %>
+  </div>
+
+  <div class="row" id="got_question">
+    <div class="col-md-12">
+      <h2>STILL GOT A QUESTION?</h2>
+      <a href="#">
+        <%= image_tag "ash_a_logo.png"%> 
+        <h3>Ask Us</h3>
+      </a>
+    </div>
+  </div>
+
+</div>

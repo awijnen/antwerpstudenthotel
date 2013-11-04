@@ -3,6 +3,11 @@
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
+$ashBlue: #00a5db;
+$ashYellow: #ffc128;
+$ashRed: #f32f14;
+$ashBeige: #e7dfca;
+$ashGrey: #40444b;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -18,6 +23,8 @@ html {
 
 body {
   padding-top: 60px;
+  color: white;
+  background-color: $grayMediumLight;
 }
 
 section {
@@ -39,22 +46,20 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+  margin-top: 0px;
 }
 
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
-  text-align: center;
 }
 
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
   font-weight: normal;
-  color: $gray-light;
 }
 
 p {
@@ -76,20 +81,21 @@ p {
   font-weight: bold;
   line-height: 1;
   &:hover {
-    color: red;
+    color: $ashBlue;
     text-decoration: none;
   }
 }
 
 /* footer */
 
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
-  color: $gray-light;
+#footer_section {
+  height: 80px;
+  vertical-align: middle;
+  background-color: $ashBlue;
+  padding: 30px 0;
+  overflow: hidden;
   a {
-    color: $gray;
+    color: white;
     &:hover {
       color: $gray-darker;
     }
@@ -195,3 +201,172 @@ input {
     text-align: center;
   }
 }
+
+/* Home page */
+
+#home_page {
+  margin-top: -10px;
+    
+  .text_pane {
+    margin-top: 90px;
+    margin-bottom: 160px;
+  }
+
+  h1 {
+    /*margin-top: 90px;*/
+    font-size: 4.2em;
+  }
+
+  h2 {
+    font-size: 3em;
+  }
+
+  h1 .smaller_h1 {
+    font-size: 0.47em;
+  }
+
+  .picture_break {
+    margin-bottom: 10px;
+  }
+}
+
+#home_introduction_pane {
+  background-color: $ashBlue;
+  img {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+#home_rooms_pane {
+  background-color: $ashYellow;
+}
+
+#home_questions_pane {
+  background-color: $ashRed;
+  line-height: 35px;
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    color: white;
+    h3 {
+      display: inline;
+    }
+  }
+  
+  #got_question {
+    margin-top: 90px;
+  }
+
+  .home_answer {
+    margin-bottom: 10px;
+  }
+
+  .home_question {
+    margin-left: 45px;
+  }
+}
+
+#home_partners_pane {
+  background-color: $ashBeige;
+  img {
+    margin: 20px 20px;
+  }
+
+  .last_row {
+    margin-bottom: 0px;
+  }
+}
+
+#home_contact_pane {
+  background-color: $ashGrey;
+}
+
+#home_title_pane {
+  background: url("/assets/amsterdam-student-hotel.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#home_map_pane {
+  background: url("/assets/ash_map_break.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#home_picture_break_pane_1 {
+  background: url("/assets/ash_room_break.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#home_picture_break_pane_3 {
+  background: url("/assets/ash_bike_break.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#home_picture_break_pane_2 {
+  background: url("/assets/ash_students_break.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title_pane {
+  height: 450px;
+}
+
+.map_pane {
+  height: 350px;
+}
+
+.room_picture {
+  height: 250px;
+}
+
+.students_picture {
+  height: 300px;
+}
+
+.bike_picture {
+  height: 300px;
+}
+
+#title_pane_logo {
+  padding-top: 50px;
+  padding-bottom: 65px;
+}
+
+/* Media Queries */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  #home_page {
+    h1 {
+      font-size: 6.5em;
+    }
+
+    .introduction_pane h1 {
+      font-size: 5em;
+    }
+
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  .container {
+    width: 940px;
+  } 
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+  .container {
+    width: 940px;
+  } 
+}
+

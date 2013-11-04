@@ -14,7 +14,6 @@ describe "Static pages" do
     let(:heading) { 'Antwerp Student Hotel' }
     let(:page_title) { '' }
 
-    it_should_behave_like "all static pages"
     it { should_not have_title('| Home') }
   end
 
@@ -36,9 +35,7 @@ describe "Static pages" do
 
   it "should have the right links on the layout" do
     visit root_path
-    click_link "About"
-    expect(page).to have_title(full_title('About Us'))
-    first(:link, "Contact").click
+    click_link "CONTACT"
     expect(page).to have_title(full_title('Contact'))
     click_link "ASH"
     expect(page).to have_title(full_title(''))
