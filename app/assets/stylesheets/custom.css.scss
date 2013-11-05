@@ -246,6 +246,12 @@ input {
 
 #home_rooms_pane {
   background-color: $ashYellow;
+  table {
+    margin-top: 50px;
+  }
+  a {
+    display: block;
+  }
 }
 
 #home_questions_pane {
