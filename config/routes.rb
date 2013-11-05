@@ -1,14 +1,15 @@
 SampleApp::Application.routes.draw do
-  get "contact_requests/new"
-  get "contact_requests/create"
-  get "contact_requests/index"
-  get "contact_requests/destroy"
+
+  resources :room_types
+  resources :reservation_types
   resources :reservations
   resources :answers, only: [:new, :create, :destroy, :index]
   resources :contact_requests, only: [:new, :create, :destroy, :index]
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  
   root 'static_pages#home'
+
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'

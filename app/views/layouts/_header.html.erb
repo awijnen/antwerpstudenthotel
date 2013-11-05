@@ -18,8 +18,10 @@
             <li><%= link_to "CONTACT", "#home_contact_pane" %></li>
           <% else %>
             <li><%= link_to "Reservations", reservations_path %></li>
+            <li><%= link_to "Reservation types", reservation_types_path %></li>
+            <li><%= link_to "Rooms", room_types_path %></li>
             <li><%= link_to "Q&A", answers_path %></li>
-            <li><%= link_to "Contact Requests", contact_requests_path %></li>
+            <li><%= link_to "Inbound", contact_requests_path %></li>
             <li><%= link_to "Users", users_path %></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">

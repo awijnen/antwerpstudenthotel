@@ -1,0 +1,41 @@
+<% provide(:title, "Room Types") %>
+
+<div class="container admin_page">
+  <h1>All Room Types</h1>
+
+  <div class="table-responsive">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Shared Room</th>
+          <th>Size</th>
+          <th>Furnished</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @room_types.each do |room_type| %>
+          <tr>
+            <td><%= room_type.id %></td>
+            <td><%= room_type.name %></td>
+            <td><%= room_type.shared_room %></td>
+            <td><%= room_type.size %></td>
+            <td><%= room_type.furnished %></td>
+            <td><%= room_type.description %></td>
+            <td>
+              <%= link_to "Edit", {controller: "room_types", action: "edit", id: room_type.id } %> | <%= link_to "Delete", room_type, method: :delete, data: { confirm: "You sure?" } %>
+            </td>
+          </tr>
+        <% end %>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <h2> 
+    <%= link_to "Create New Room Type", new_room_type_path %> 
+  </h2>
+</div>

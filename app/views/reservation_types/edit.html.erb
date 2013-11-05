@@ -1,17 +1,14 @@
-<% provide(:title, "Edit user") %>
+<% provide(:title, "Edit Reservation Type") %>
  
 <div class="container admin_page">  
-  <h1>Update your profile</h1>
+  <h1>Edit Reservation Type</h1>
 
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <%= form_for(@user) do |f| %>
+      <%= form_for(@reservation_type) do |f| %>
         <%= render 'fields', f: f %>
         <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
       <% end %>
-
-      <%= gravatar_for @user %>
-      <%= link_to "change", "http://gravatar.com/emails", target: "_blank" %>
     </div>
   </div>
 </div>

@@ -30,6 +30,7 @@
           <td valign="top">
             <h2>Reservation Details</h2>
             <p>Name: <%= @reservation.name + " " + @reservation.surname %></p>
+            <p>Room Type: <%= @reservation.reservation_type.room_type.name %></p>
             <p>Email: <%= @reservation.email %></p>
             <p>Start Date: <%= @reservation.start_date %></p>
             <p>End Date: <%= @reservation.end_date %></p>

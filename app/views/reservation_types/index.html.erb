@@ -1,0 +1,51 @@
+<% provide(:title, "Reservation Types") %>
+
+<div class="container admin_page">
+  <h1>All Reservation Types</h1>
+
+  <div class="table-responsive">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Room Type</th>
+          <th>Length</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Available</th>
+          <th>Marketing Message</th>
+          <th>Marketing Color</th>
+          <th>Sold Out</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @reservation_types.each do |reservation_type| %>
+          <tr>
+            <td><%= reservation_type.id %></td>
+            <td><%= reservation_type.room_type.name %></td>
+            <td><%= reservation_type.length_type %></td>
+            <td><%= reservation_type.start_date %></td>
+            <td><%= reservation_type.end_date %></td>
+            <td><%= reservation_type.price %></td>
+            <td><%= reservation_type.quantity %></td>
+            <td><%= reservation_type.available %></td>
+            <td><%= reservation_type.marketing_msg %></td>
+            <td><%= reservation_type.marketing_color %></td>
+            <td><%= reservation_type.sold_out %></td>
+            <td>
+              <%= link_to "Edit", {controller: "reservation_types", action: "edit", id: reservation_type.id } %> | <%= link_to "Delete", reservation_type, method: :delete, data: { confirm: "You sure?" } %>
+            </td>
+          </tr>
+        <% end %>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <h2> 
+    <%= link_to "Create New Reservation Type", new_reservation_type_path %> 
+  </h2>
+</div>

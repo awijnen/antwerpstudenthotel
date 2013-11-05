@@ -8,6 +8,8 @@
       <thead>
         <tr>
           <th>Reservation id</th>
+          <th>Room type</th>
+          <th>Length type</th>
           <th>Start Date</th>
           <th>End Date</th>
           <th>Email</th>
@@ -19,6 +21,13 @@
         <% @reservations.each do |reservation| %>
           <tr>
             <td><%= reservation.id %></td>
+            <% if reservation.reservation_type.nil? || reservation.reservation_type.room_type.nil? %>
+              <td>No Reservation or Room Type</td>
+              <td>No Length Type</td>
+            <% else %>
+              <td><%= reservation.reservation_type.room_type.name %></td>
+              <td><%= reservation.reservation_type.length_type %></td>
+            <% end %>
             <td><%= reservation.start_date %></td>
             <td><%= reservation.end_date %></td>
             <td><%= reservation.email %></td>
@@ -27,6 +36,7 @@
               <% unless reservation.approved? %>
                  <%= link_to "Approve", approval_toggle_path(id: reservation.id) %> | 
               <% end %> 
+              <%= link_to "Edit", {controller: "reservations", action: "edit", id: reservation.id } %> |
               <%= link_to "Delete", reservation, method: :delete, data: { confirm: "You sure?" } %>
             </td>
           </tr>

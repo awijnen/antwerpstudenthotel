@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131104183306) do
+ActiveRecord::Schema.define(version: 20131105123624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,21 @@ ActiveRecord::Schema.define(version: 20131104183306) do
     t.datetime "updated_at"
   end
 
+  create_table "reservation_types", force: true do |t|
+    t.integer  "room_type_id"
+    t.string   "length_type"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "price"
+    t.integer  "quantity"
+    t.integer  "available"
+    t.string   "marketing_msg"
+    t.string   "marketing_color"
+    t.boolean  "sold_out"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "reservations", force: true do |t|
     t.date     "start_date"
     t.date     "end_date"
@@ -49,9 +64,21 @@ ActiveRecord::Schema.define(version: 20131104183306) do
     t.string   "phone"
     t.string   "university"
     t.text     "comment"
-    t.boolean  "approved",   default: false
+    t.boolean  "approved",            default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "reservation_type_id"
+  end
+
+  create_table "room_types", force: true do |t|
+    t.text     "description"
+    t.integer  "rating"
+    t.boolean  "shared_room"
+    t.integer  "size"
+    t.boolean  "furnished"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "users", force: true do |t|

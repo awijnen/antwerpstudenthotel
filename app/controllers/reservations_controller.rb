@@ -34,6 +34,20 @@ before_action :admin_user, only: [:index, :destroy, :toggle_approval]
     redirect_to reservations_path
   end
 
+  def edit
+    @reservation = Reservation.find(params[:id])
+  end
+
+  def update
+    @reservation = Reservation.find(params[:id])
+    if @reservation.update_attributes(reservation_params)
+      flash[:success] = "Reservation updated"
+    else
+      flash[:error] = "Couldn't update reservation"
+    end
+    redirect_to reservations_path
+  end
+
   def approval_toggle
     @reservation = Reservation.find(params[:id])
     @reservation.toggle(:approved)
