@@ -24,17 +24,17 @@
       <tbody>
         <% @reservation_types.each do |reservation_type| %>
           <tr>
-            <td><%= reservation_type.id %></td>
-            <td><%= reservation_type.room_type.name %></td>
-            <td><%= reservation_type.length_type %></td>
-            <td><%= reservation_type.start_date %></td>
-            <td><%= reservation_type.end_date %></td>
-            <td><%= reservation_type.price %></td>
-            <td><%= reservation_type.quantity %></td>
-            <td><%= reservation_type.available %></td>
-            <td><%= reservation_type.marketing_msg %></td>
-            <td><%= reservation_type.marketing_color %></td>
-            <td><%= reservation_type.sold_out %></td>
+            <td><%= reservation_type.id unless reservation_type.id.nil? %></td>
+            <td><%= reservation_type.room_type.name unless reservation_type.room_type.name.nil? %></td>
+            <td><%= reservation_type.length_type unless reservation_type.length_type.nil? %></td>
+            <td><%= reservation_type.start_date unless reservation_type.start_date.nil? %></td>
+            <td><%= reservation_type.end_date unless reservation_type.end_date.nil? %></td>
+            <td><%= reservation_type.price unless reservation_type.price.nil? %></td>
+            <td><%= reservation_type.quantity unless reservation_type.quantity.nil? %></td>
+            <td><%= reservation_type.available unless reservation_type.available.nil? %></td>
+            <td><%= reservation_type.marketing_msg unless reservation_type.marketing_msg.nil? %></td>
+            <td><%= reservation_type.marketing_color unless reservation_type.marketing_color.nil? %></td>
+            <td><%= reservation_type.sold_out unless reservation_type.sold_out.nil? %></td>
             <td>
               <%= link_to "Edit", {controller: "reservation_types", action: "edit", id: reservation_type.id } %> | <%= link_to "Delete", reservation_type, method: :delete, data: { confirm: "You sure?" } %>
             </td>

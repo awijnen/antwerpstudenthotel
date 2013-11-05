@@ -4,10 +4,12 @@ before_action :admin_user, only: [:index, :destroy, :toggle_approval]
 
   def new
     @reservation = Reservation.new
-    @room_type = params[:room_type]
+    @reservation_type = ReservationType.find(params[:reservation_type_id])
   end
 
   def create
+    
+
     @reservation = Reservation.new(reservation_params)
     if @reservation.save
       ReservationMailer.user_reservation_request(@reservation).deliver

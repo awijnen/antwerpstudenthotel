@@ -252,6 +252,24 @@ input {
   a {
     display: block;
   }
+  
+  .rooms_table {
+    text-align: center;
+  }
+
+  .rooms_box {
+    border: 1px solid black;
+    height: 80px;
+  }
+
+  .remove_padding {
+    padding: 0;
+  }
+
+  .rooms_box_invert {
+    color: $ashYellow;
+    background-color: white;
+  }
 }
 
 #home_questions_pane {

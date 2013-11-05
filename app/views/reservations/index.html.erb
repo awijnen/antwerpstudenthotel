@@ -21,13 +21,8 @@
         <% @reservations.each do |reservation| %>
           <tr>
             <td><%= reservation.id %></td>
-            <% if reservation.reservation_type.nil? || reservation.reservation_type.room_type.nil? %>
-              <td>No Reservation or Room Type</td>
-              <td>No Length Type</td>
-            <% else %>
-              <td><%= reservation.reservation_type.room_type.name %></td>
-              <td><%= reservation.reservation_type.length_type %></td>
-            <% end %>
+            <td><%= reservation.reservation_type.room_type.name %></td>
+            <td><%= reservation.reservation_type.length_type %></td>
             <td><%= reservation.start_date %></td>
             <td><%= reservation.end_date %></td>
             <td><%= reservation.email %></td>

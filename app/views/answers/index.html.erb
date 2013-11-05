@@ -16,9 +16,9 @@
       <tbody>
         <% @answers.each do |answer| %>
           <tr>
-            <td><%= answer.id %></td>
-            <td><%= answer.question %></td>
-            <td><%= answer.answer %></td>
+            <td><%= answer.id unless answer.id.nil? %></td>
+            <td><%= answer.question unless answer.question.nil? %></td>
+            <td><%= answer.answer unless answer.answer.nil? %></td>
             <td>
               <%= link_to "Delete", answer, method: :delete, data: { confirm: "You sure?" } %>
             </td>

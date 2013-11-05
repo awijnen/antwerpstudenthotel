@@ -1,165 +1,90 @@
-<div class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Room Type / Duration</th>
-                <th>Per Night</th>
-                <th>1 Month</th>
-                <th>5 Months</th>
-                <th>10 Months</th>
-                <th>12 Months</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  Type 1
-                </td>
-                <td>
-                  $199,00
-                  <a href="http://www.booking.com">Book this room</a>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <a href="http://www.booking.com">Book this room</a>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <a href="http://www.booking.com">Book this room</a>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <a href="http://www.booking.com">Book this room</a>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <a href="http://www.booking.com">Book this room</a>
-                  <small>70% Booked</small>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Type 2
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 2 } %>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 2 } %>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 2 } %>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 2 } %>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 2 } %>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Type 3
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 3 } %>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 3 } %>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 3 } %>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 3 } %>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 3 } %>
-                  <small>70% Booked</small>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Type 4
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 4 } %>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 4 } %>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 4 } %>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 4 } %>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 4 } %>
-                  <small>70% Booked</small>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Hotel
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 5 } %>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 5 } %>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 5 } %>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 5 } %>
-                  <small>70% Booked</small>
-                </td>
-                <td>
-                  $199,00
-                  <%= link_to "Book this room", {:controller => "reservations", :action => "new", :room_type => 5 } %>
-                  <small>70% Booked</small>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+<div class="row rooms_table">
+  <div class="col-xs-2 remove_padding">
+    <div class="rooms_box rooms_box_invert">
+      <div>
+        Duration
+      </div>
+      <div>
+        Room Type
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-xs-2 remove_padding">
+    <div class="rooms_box rooms_box_invert">
+      <p>Per Night</p>
+    </div>
+  </div>
+
+  <div class="col-xs-2 remove_padding">
+    <div class="rooms_box rooms_box_invert">
+      <p>1 Month</p>
+    </div>
+  </div>
+
+  <div class="col-xs-2 remove_padding">
+    <div class="rooms_box rooms_box_invert"
+    ><p>5 Months</p>
+  </div>
+  </div>
+
+  <div class="col-xs-2 remove_padding">
+    <div class="rooms_box rooms_box_invert">
+      <p>10 Months</p>
+    </div>
+  </div>
+
+  <div class="col-xs-2 remove_padding">
+    <div class="rooms_box rooms_box_invert">
+      <p>12 Months</p>
+    </div>
+  </div>
+
+</div>
+
+<% @room_types.each do |room_type| %>
+  <div class="row">
+
+    <div class="col-xs-2 remove_padding">
+      <div class="rooms_box rooms_box_invert">
+
+        <div class="row">
+          <div class="col-xs-12">
+            <%= room_type.name %>
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            Rating: <%= room_type.rating %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <%= link_to "More info about this room", room_type %>
+          </div>
+        </div>
+        
+
+      </div>
+    </div>
+
+    <!-- http://stackoverflow.com/questions/7772859/rails-3-how-do-display-two-decimal-places-in-edit-form -->
+    <% room_type.reservation_types.each do |reservation_type| %>
+      <div class="col-xs-2 remove_padding">
+        <div class="rooms_box">
+          
+          <div class="row">
+            <div class="col-xs-12">
+              <%= reservation_type.marketing_msg %><br>
+              €<%= "%.2f" % (reservation_type.price) %>
+              <%= link_to "Book this room", {:controller => "reservations", :action => "new", :reservation_type_id => reservation_type.id }  %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+</div>
+<% end %>

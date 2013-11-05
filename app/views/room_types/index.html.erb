@@ -19,12 +19,12 @@
       <tbody>
         <% @room_types.each do |room_type| %>
           <tr>
-            <td><%= room_type.id %></td>
-            <td><%= room_type.name %></td>
-            <td><%= room_type.shared_room %></td>
-            <td><%= room_type.size %></td>
-            <td><%= room_type.furnished %></td>
-            <td><%= room_type.description %></td>
+            <td><%= room_type.id unless room_type.id.nil? %></td>
+            <td><%= room_type.name unless room_type.name.nil? %></td>
+            <td><%= room_type.shared_room unless room_type.shared_room.nil? %></td>
+            <td><%= room_type.size unless room_type.size.nil? %></td>
+            <td><%= room_type.furnished unless room_type.furnished.nil? %></td>
+            <td><%= room_type.description unless room_type.description.nil? %></td>
             <td>
               <%= link_to "Edit", {controller: "room_types", action: "edit", id: room_type.id } %> | <%= link_to "Delete", room_type, method: :delete, data: { confirm: "You sure?" } %>
             </td>

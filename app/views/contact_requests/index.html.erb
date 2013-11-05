@@ -20,13 +20,13 @@
       <tbody>
         <% @contact_requests.each do |contact_request| %>
           <tr>
-            <td><%= contact_request.id %></td>
-            <td><%= contact_request.name %></td>
-            <td><%= contact_request.surname %></td>
-            <td><%= contact_request.email %></td>
-            <td><%= contact_request.phone %></td>
-            <td><%= contact_request.country %></td>
-            <td><%= contact_request.comment %></td>
+            <td><%= contact_request.id unless contact_request.id.nil? %></td>
+            <td><%= contact_request.name unless contact_request.name.nil? %></td>
+            <td><%= contact_request.surname unless contact_request.surname.nil? %></td>
+            <td><%= contact_request.email unless contact_request.email.nil? %></td>
+            <td><%= contact_request.phone unless contact_request.phone.nil? %></td>
+            <td><%= contact_request.country unless contact_request.country.nil? %></td>
+            <td><%= contact_request.comment unless contact_request.comment.nil? %></td>
             <td>   
               <%= link_to "Delete", contact_request, method: :delete, data: { confirm: "You sure?" } %>
             </td>
