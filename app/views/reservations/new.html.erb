@@ -5,9 +5,10 @@
 
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
-      <p>Reservation type: <%= @reservation_type.start_date %></p>
-      <p>Reservation type: <%= @reservation_type.end_date %></p>
-      <%= form_for(@reservation) do |f| %> 
+      <%= form_for @reservation, 
+             :url => { :controller => :reservations, 
+                       :action => :create, 
+                       :reservation_type => @reservation_type } do |f| %>
         <%= render 'fields', f: f %>
         <%= f.submit "Submit Reservation", class: "btn btn-large btn-primary" %>
       <% end %>

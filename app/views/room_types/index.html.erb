@@ -12,6 +12,7 @@
           <th>Shared Room</th>
           <th>Size</th>
           <th>Furnished</th>
+          <th>Rating</th>
           <th>Description</th>
           <th>Actions</th>
         </tr>
@@ -24,6 +25,7 @@
             <td><%= room_type.shared_room unless room_type.shared_room.nil? %></td>
             <td><%= room_type.size unless room_type.size.nil? %></td>
             <td><%= room_type.furnished unless room_type.furnished.nil? %></td>
+            <td><%= room_type.rating unless room_type.rating.nil? %></td>
             <td><%= room_type.description unless room_type.description.nil? %></td>
             <td>
               <%= link_to "Edit", {controller: "room_types", action: "edit", id: room_type.id } %> | <%= link_to "Delete", room_type, method: :delete, data: { confirm: "You sure?" } %>

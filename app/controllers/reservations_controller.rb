@@ -4,21 +4,23 @@ before_action :admin_user, only: [:index, :destroy, :toggle_approval]
 
   def new
     @reservation = Reservation.new
-    @reservation_type = ReservationType.find(params[:reservation_type_id])
+    @reservation_type = ReservationType.find(params[:reservation_type_id]) unless params[:reservation_type_id].nil?  
   end
 
   def create
-    
-
-    @reservation = Reservation.new(reservation_params)
-    if @reservation.save
+    @reservation_type = ReservationType.find(params[:reservation_type])
+    if @reservation = @reservation_type.reservations.create(reservation_params)
       ReservationMailer.user_reservation_request(@reservation).deliver
       ReservationMailer.admin_reservation_request(@reservation).deliver
-
       flash[:success] = "Reservation request received"
-      redirect_to root_url
     else
-      render 'new'
+      flash[:error] = "Reservation request failed"
+    end
+    
+    if signed_in?
+      redirect_to reservations_path
+    else
+      redirect_to root_url
     end
   end
 
